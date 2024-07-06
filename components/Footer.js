@@ -12,10 +12,11 @@ function Footer() {
   <div className="container px-5 py-2 pt-10 mx-auto flex items-center sm:flex-row flex-col">
   <Link href='/' className="flex title-font font-medium items-center text-gray-300 mb-4 md:mb-0">
             {/* <Image src={logo} alt="" style={{ height: "4rem", width: "4rem" }}></Image> */}
+            <span class="ml-1 bg-yellow-500 text-white px-6 py-2  justify-center  rounded-2xl text-2xl">BlogoPhile</span>
 
-            <span className="ml-3 text-gray-300 text-4xl">Blogophile</span>
+            {/* <span className="ml-3 text-gray-300 text-4xl">Blogophile</span> */}
           </Link>
-    <p className="text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-green-200 sm:py-2 sm:mt-0 mt-4">© 2024 KnowledgeHub —
+    <p className="text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-green-200 sm:py-2 sm:mt-0 mt-4">© 2024 BlogoPhile —
       <a href="https://www.linkedin.com/in/krishna-jaiswal-383122248/" className="text-gray-300 ml-1" rel="noopener noreferrer" target="_blank">@krishnajaiswal</a>
     </p>
     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
