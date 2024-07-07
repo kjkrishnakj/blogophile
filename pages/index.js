@@ -8,6 +8,24 @@ import Head from "next/head";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ blogs }) {
+  const handleDeleteBlog = async (blogId) => {
+    try {
+      const response = await fetch(`/api/deleteBlog/${blogId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.ok) {
+        // Optionally, update local state or trigger a refresh of blog data
+        console.log('Blog deleted successfully');
+      } else {
+        console.error('Failed to delete blog');
+      }
+    } catch (error) {
+      console.error('Error deleting blog:', error);
+    }
+  };
   return (
     <>
     <Head>
@@ -19,7 +37,7 @@ export default function Home({ blogs }) {
       {blogs.map((k) => (
         
         <div key={k._id} className="p-4 md:w-1/3">
-          <Link passHref={true} key={k._id} href={`/product/${k.slug}`}>
+          <Link onClick={handleDeleteBlog} key={k._id}  >
 
             <div className="h-full border-2 border-gray-800 rounded-lg overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105">
               <img loading="lazy" src={k.img} alt="Add image here" className="lg:h-48 md:h-36 w-full object-fill object-center shadow-lg" style={{ boxShadow: '0px 4px 26px -1px rgba(252, 211, 77, 0.5), 0 2px 4px -1px rgba(252, 211, 77, 0.5)', height: "16rem" }} />
