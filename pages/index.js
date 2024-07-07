@@ -3,12 +3,16 @@ import { Inter } from "next/font/google";
 import Blogs from "../models/Blogs";
 import mongoose from "mongoose";
 import Link from "next/link";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ blogs }) {
   return (
     <>
+    <Head>
+      <title>BlogoPhile | Home</title>
+    </Head>
       <section className="text-gray-400 bg-gray-900 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">

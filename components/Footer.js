@@ -12,7 +12,7 @@ function Footer() {
   <div className="container px-5 py-2 pt-10 mx-auto flex items-center sm:flex-row flex-col">
   <Link href='/' className="flex title-font font-medium items-center text-gray-300 mb-4 md:mb-0">
             {/* <Image src={logo} alt="" style={{ height: "4rem", width: "4rem" }}></Image> */}
-            <span class="ml-1 bg-yellow-500 text-white px-6 py-2  justify-center  rounded-2xl text-2xl">BlogoPhile</span>
+            <span className="ml-1 bg-yellow-500 text-white px-6 py-2  justify-center  rounded-2xl text-2xl">BlogoPhile</span>
 
             {/* <span className="ml-3 text-gray-300 text-4xl">Blogophile</span> */}
           </Link>

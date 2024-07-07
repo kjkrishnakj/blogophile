@@ -1,15 +1,12 @@
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import mongoose from "mongoose";
-import Error from 'next/error'
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Head from 'next/head';
 import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import Blogs from '@/models/Blogs';
-
+import Blogs from '../../models/Blogs';
 const Post = ({ error, blog, relevantBlogs }) => {
     const router = useRouter();
     const { slug } = router.query
@@ -42,12 +39,12 @@ const Post = ({ error, blog, relevantBlogs }) => {
                 <title>KnowledgeHub | Course</title>
                 <link rel="icon" href="/icon.ico" type="image/x-icon" />
             </Head>
-            <section class="text-gray-400 bg-gray-900 body-font">
-                <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <section className="text-gray-400 bg-gray-900 body-font">
+                <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
                     <img    className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded shadow-lg" style={{ boxShadow: '0px 4px 26px -1px rgba(252, 211, 77, 0.5), 0 2px 4px -1px rgba(252, 211, 77, 0.5)' }} alt="hero"src={blog.img}/>
-                    <div class="text-center lg:w-2/3 w-full">
-                        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">{blog.title}</h1>
-                        <p class="leading-relaxed mb-8">{blog.descr}</p>
+                    <div className="text-center lg:w-2/3 w-full">
+                        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">{blog.title}</h1>
+                        <p className="leading-relaxed mb-8">{blog.descr}</p>
 
                     </div>
                 </div>

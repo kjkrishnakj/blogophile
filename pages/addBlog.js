@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
@@ -60,43 +61,46 @@ const AddBlog = () => {
 
     return (
         <div>
+               <Head>
+      <title>BlogoPhile | AddBlog</title>
+    </Head>
             <ToastContainer />
 
-            <section class="text-gray-400 bg-gray-900 body-font relative">
-                <div class="container px-5 py-12 mx-auto flex flex-col items-center">
-                    {/* <span class="bg-yellow-500 text-white px-4 py-2 justify-center rounded-2xl text-2xl mb-12">BlogoPhile</span> */}
-                    <div class="flex flex-col text-center w-full mb-12">
-                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Add a Blog</h1>
-                        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Fill the following details to become a Creator.</p>
+            <section className="text-gray-400 bg-gray-900 body-font relative">
+                <div className="container px-5 py-12 mx-auto flex flex-col items-center">
+                    {/* <span className="bg-yellow-500 text-white px-4 py-2 justify-center rounded-2xl text-2xl mb-12">BlogoPhile</span> */}
+                    <div className="flex flex-col text-center w-full mb-12">
+                        <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Add a Blog</h1>
+                        <p className="lg:w-2/3 mx-auto leading-relaxed text-base">Fill the following details to become a Creator.</p>
                     </div>
-                    <div class="lg:w-1/2 md:w-2/3 mx-auto">
-                        <div class="flex flex-wrap -m-2">
-                            <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="title" class="leading-7 text-sm text-gray-400">Title</label>
-                                    <input required value={title} onChange={handleChange} type="text" id="title" name="title" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                    <div className="lg:w-1/2 md:w-2/3 mx-auto">
+                        <div className="flex flex-wrap -m-2">
+                            <div className="p-2 w-1/2">
+                                <div className="relative">
+                                    <label htmlFor="title" className="leading-7 text-sm text-gray-400">Title</label>
+                                    <input required value={title} onChange={handleChange} type="text" id="title" name="title" className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                 </div>
                             </div>
-                            <div class="p-2 w-1/2">
-                                <div class="relative">
-                                    <label for="category" class="leading-7 text-sm text-gray-400">Category</label>
-                                    <input required value={category} onChange={handleChange} type="text" id="category" name="category" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="p-2 w-1/2">
+                                <div className="relative">
+                                    <label htmlFor="category" className="leading-7 text-sm text-gray-400">Category</label>
+                                    <input required value={category} onChange={handleChange} type="text" id="category" name="category" className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
-                                <div class="relative">
-                                    <label for="descr" class="leading-7 text-sm text-gray-400">Description</label>
-                                    <textarea required value={descr} onChange={handleChange} id="descr" name="descr" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                            <div className="p-2 w-full">
+                                <div className="relative">
+                                    <label htmlFor="descr" className="leading-7 text-sm text-gray-400">Description</label>
+                                    <textarea required value={descr} onChange={handleChange} id="descr" name="descr" className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 h-32 text-base outline-none text-gray-100 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
-                                <div class="relative">
-                                    <label for="image" class="leading-7 text-sm text-gray-400">Image (Link)</label>
-                                    <input required value={image} onChange={handleChange} type="text" id="image" name="image" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
+                            <div className="p-2 w-full">
+                                <div className="relative">
+                                    <label htmlFor="image" className="leading-7 text-sm text-gray-400">Image (Link)</label>
+                                    <input required value={image} onChange={handleChange} type="text" id="image" name="image" className="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-yellow-500 focus:bg-gray-900 focus:ring-2 focus:ring-yellow-900 text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" />
                                 </div>
                             </div>
-                            <div class="p-2 w-full">
-                                <button onClick={handleSubmit} class="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
+                            <div className="p-2 w-full">
+                                <button onClick={handleSubmit} className="flex mx-auto text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Submit</button>
                             </div>
                             
                         </div>
