@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Blog = require('../models/Blogs'); // Replace with your Blog model import
+const Blog = require('../../models/Blogs'); // Replace with your Blog model import
 
 // DELETE route to delete a blog by ID
 router.delete('/api/deleteBlog/:id', async (req, res) => {
