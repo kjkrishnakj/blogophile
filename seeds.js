@@ -30,15 +30,19 @@ const preprocessData = (data) => {
   });
 };
 
-const productFilePath = path.join(__dirname, "blogophile.blogs.json");
+const productFilePath = path.join(__dirname, "blogophi  le.blogs.json");
 const rawProductData = fs.readFileSync(productFilePath, "utf-8");
 const productsData = preprocessData(JSON.parse(rawProductData));
 
 const seedDatabase = async () => {
   try {
     // Remove blogs with title "t1" before seeding
-    await Blogs.deleteMany({ title: "t1" });
-
+    const deletedBlog = await Blogs.findOneAndDelete({ title: "t1" });
+    if (deletedBlog) {
+      console.log("Deleted blog:", deletedBlog);
+    } else {
+      console.log("Blog with title 't1' not found.");
+    }
     // Insert new data
     await Blogs.insertMany(productsData);
     console.log("Product database seeding successful");
