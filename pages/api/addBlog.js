@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 const handler = async (req, res) => {
     const {title,category,descr,image}=req.body;
-
+console.log("title = ",title);
     try {
     
 
