@@ -1,4 +1,4 @@
-import connectDb from "../../lib/connectDb";
+import connectDb from "../../middleware/connectDb";
 import Blogs from "../../models/Blogs";
 
 const handler = async (req, res) => {
