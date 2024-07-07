@@ -6,7 +6,7 @@ const Blog = require('../../models/Blogs'); // Replace with your Blog model impo
 router.delete('/api/deleteBlog/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    const deletedBlog = await Blog.findByIdAndDelete(id);
+    const deletedBlog = await Blog.findOneAndDelete({title:id});
     if (deletedBlog) {
       res.status(200).json({ message: 'Blog deleted successfully' });
     } else {

@@ -65,7 +65,7 @@ export default function Home({ blogs }) {
                       {/* Use a button or link styled as a button */}
                       <button
                         className="text-yellow-400 inline-flex items-center md:mb-2 lg:mb-0"
-                        onClick={() => handleDeleteBlog(k._id)} // Pass blog ID to delete function
+                        onClick={() => handleDeleteBlog(k.title)} // Pass blog ID to delete function
                       >
                         Delete Blog
                       </button>
