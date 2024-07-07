@@ -14,7 +14,6 @@ mongoose
     console.error("Database connection error:", err);
   });
 
-// seeds
 // Function to preprocess the JSON data
 const preprocessData = (data) => {
   return data.map((item) => {
@@ -31,24 +30,21 @@ const preprocessData = (data) => {
   });
 };
 
-
 const productFilePath = path.join(__dirname, "blogophile.blogs.json");
 const rawProductData = fs.readFileSync(productFilePath, "utf-8");
 const productsData = preprocessData(JSON.parse(rawProductData));
- 
-
-
 
 const seedDatabase = async () => {
   try {
-    
-    await Blogs.deleteMany({});   
-    await Blogs.insertMany(productsData);  
-    console.log("Product database seeding successful");
+    // Remove blogs with title "t1" before seeding
+    await Blogs.deleteMany({ title: "t1" });
 
-    mongoose.connection.close();
+    // Insert new data
+    await Blogs.insertMany(productsData);
+    console.log("Product database seeding successful");
   } catch (err) {
     console.error("Database seeding error:", err);
+  } finally {
     mongoose.connection.close();
   }
 };
