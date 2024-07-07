@@ -33,7 +33,7 @@ const AddBlog = () => {
         else {
             e.preventDefault()
             const data = { title, category, descr, image }
-            let res = await fetch(`http://localhost:3000/api/addBlog`, {
+            let res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/addBlog`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ const AddBlog = () => {
             toast.success("Blog added successfully ✅", { autoClose: 1000 })
             setTimeout(() => {
 
-                router.push("http://localhost:3000")
+                router.push(process.env.NEXT_PUBLIC_HOST)
             }, 1000)
 
 
